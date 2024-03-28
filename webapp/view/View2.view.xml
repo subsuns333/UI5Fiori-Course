@@ -26,7 +26,7 @@
         <footer>
             <Toolbar >
                 <ToolbarSpacer ></ToolbarSpacer>
-                <Button text="Save" icon="sap-icon://save" type="Success" press="onSave"></Button>
+                <Button text="Saveee" icon="sap-icon://save" type="Success" press="onSave"></Button>
                 <Button text="Cancel" icon="sap-icon://cancel" type="Reject" press="onCancel"></Button>
                 
             </Toolbar>
