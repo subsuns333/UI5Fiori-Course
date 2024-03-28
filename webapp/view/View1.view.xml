@@ -1,0 +1,76 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.cap.auto.controller.View1">
+   <mvc:content>
+    <Page title="View 1">
+        <headerContent>
+        <Button tooltip="Go to the next screen" icon="sap-icon://arrow-right" press="onNext"></Button>
+        </headerContent>
+        <content>
+            <!-- <Button text="Go to" icon="sap-icon://arrow-right" press="onNext"></Button> -->
+            <SearchField id="idSearch" search="onSearch"></SearchField>
+            <List id="idList" selectionChange="onItemSelect"
+            items="{path: '/fruits', sorter: {path :'name'}}" 
+            mode="SingleSelectMaster" delete="onDelete">
+            <headerToolbar>
+              <Toolbar>
+                <Button icon="sap-icon://delete" tooltip="Delete Selected Item"
+                        press="onDeleteMulti"></Button>
+                </Toolbar>
+            </headerToolbar>
+                <items> 
+               
+                <!-- To write simple data in read only mode left and right -->
+                     <!-- <DisplayListItem label="Apple" value="Best Antibiotic" ></DisplayListItem> -->
+                <!-- To disply read only data but top buttom aligned with icon -->
+                    <!-- <StandardListItem title="Banana" description="Great source of pottatiam"  icon="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Banana-Single.jpg/640px-Banana-Single.jpg"> -->
+                    <!-- </StandardListItem> -->
+                <!-- To create set of input objects inside -->
+                    <!-- <InputListItem > -->
+                        <!-- <content> -->
+                            <!-- <HBox > -->
+                                <!-- <Label text="Quantity of oder" class="sapUiLargeMarginEnd  sapUiTinyMarginTop"></Label> -->
+                                <!-- <Input ></Input> -->
+                            <!-- </HBox> -->
+                        <!-- </content> -->
+                    <!-- </InputListItem> -->
+                <!-- If none of this list items support our requirement, we can opt of custom list item -->   
+                    <!-- <CustomListItem > -->
+                        <!-- <content> -->
+                            <!-- <HBox > -->
+                                <!-- <Label text="Do u want COD?" class="sapUiLargeMarginEnd  sapUiTinyMarginTop"></Label> -->
+                                <!-- <Switch ></Switch> -->
+                            <!-- </HBox> -->
+                        <!-- </content> -->
+                    <!-- </CustomListItem>  -->
+                    
+                <!-- To display a business object data -->
+                    <ObjectListItem title="{name}" intro="{type}"
+                                    number="{price}" numberUnit="{unit}"
+                                    icon="{image}">
+                        <attributes>
+                            <ObjectAttribute title="Color" text="{color}"></ObjectAttribute>
+                            <ObjectAttribute title="Type" text="{type}"></ObjectAttribute>
+                        </attributes>        
+                        <firstStatus>
+                        <ObjectStatus text="{status}" state="{path : 'status', formatter:'.formatter.getState'}"></ObjectStatus>
+                        </firstStatus>
+                    </ObjectListItem>
+                <!-- To Create social meadia application -->
+                    <!-- <FeedListItem timestamp="March 10th" text="Hai"  -->
+                        <!-- icon="https://upload.wikimedia.org/wikipedia/commons/c/c4/Official_Photograph_of_Prime_Minister_Narendra_Modi_Portrait.png" sender="Modi" info="More"> -->
+                    <!-- </FeedListItem> -->
+                <!-- To carete Action list item -->
+                    <!-- <ActionListItem text="Order Now" press="onOrder"> -->
+
+                    <!-- </ActionListItem> -->
+                </items>
+            </List>
+        </content>
+        <footer>
+            <Toolbar >
+                <ToolbarSpacer ></ToolbarSpacer>
+                <Button icon="sap-icon://add" tooltip="Add New product" press="onAdd"></Button>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:content>
+</mvc:View>

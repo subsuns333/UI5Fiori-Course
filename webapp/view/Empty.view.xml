@@ -1,0 +1,7 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.cap.auto.controller.Empty">
+<Page title="Empty">  
+<!-- Adding an Image control -->
+    <Image src="https://mobolutions.com/wp-content/uploads/2017/09/Do-I-really-need-the-SAP-Fiori-Client-App-to-open-my-other-Fiori-Apps.jpg" height="100%"></Image>
+
+</Page>
+</mvc:View> 

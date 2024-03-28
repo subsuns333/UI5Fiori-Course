@@ -1,0 +1,46 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+<Table id="supplierTab" items="{/suppliers}">
+                            <headerToolbar> 
+                                <Toolbar >
+                                    <content>
+                                        <ToolbarSpacer ></ToolbarSpacer>
+                                        <Button icon="sap-icon://filter" tooltip="Filter Supplier Data" press="onFilter"></Button>
+                                    </content>
+                                </Toolbar>
+                            </headerToolbar>
+                            <columns>
+                                <Column >
+                                    <header>
+                                        <Label text="Supplier Name"></Label>
+                                    </header>
+                                </Column>
+                                <Column >
+                                    <header>
+                                        <Label text="City"></Label>
+                                    </header>
+                                </Column>
+                                <Column minScreenWidth="Tablet">
+                                    <header>
+                                        <Label text="Contact Person"></Label>
+                                    </header>
+                                </Column>
+                                <Column minScreenWidth="Tablet" demandPopin="true">
+                                    <header>
+                                        <Label text="Since When"></Label>
+                                    </header>
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem >
+                                    <cells>
+                                        <Text text="{name}"></Text>
+                                        <Input value="{city}" showValueHelp="true" valueHelpRequest="onF4Request"></Input>
+                                        <Text text="{contactPerson}"></Text>
+                                        <Text text="{sincewhen}"></Text>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+
+        </Table>
+
+</core:FragmentDefinition>

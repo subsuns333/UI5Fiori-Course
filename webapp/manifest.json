@@ -1,0 +1,103 @@
+{
+    "sap.app":{
+        "id": "com.cap.auto",
+        "type": "application",
+        "ach" : "FIN-ACC-AP",
+        "title": "{{APPTITLE}}",
+        "description":"{{APPDESCRIPTION}}",
+        "applicationVersion": {
+            "version": "1.0.0"
+        }
+    },
+    "sap.ui": {
+        "supportedThemes": ["sap_fiori_3_dark","sap_horizon"],
+        "deviceTypes":{
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "technology": "UI5"
+
+    },
+    "sap.ui5":{
+        "dependencies": {
+            "minUI5Version": "1.100.2",
+            "libs": {
+                "sap.m":{"minVersion": "1.100.2"},
+                "sap.ui.core":{"minVersion": "1.100.2"},
+                "sap.ui.layout":{"minVersion": "1.100.2"}
+            }
+        },
+        "rootView" :{
+            "viewName": "com.cap.auto.view.App",
+            "type": "XML",
+            "id": "idRoot"
+        },
+        "routing": {
+            "config":{
+                "viewPath": "com.cap.auto.view",
+                "viewType": "XML",
+                "controlId": "appCon",
+                "clearControlAggregation": true
+            },
+            "routes":[
+                {
+                    "name": "master",
+                    "pattern": "",
+                    "target" :["viewOne","EmptyView"]
+                }, {
+                    "name":"detail",
+                    "pattern": "fruits/{fruitId}",
+                    "target" :["viewOne","viewTwo"]
+                }, {
+                    "name":"addProduct",
+                    "pattern": "newProduct",
+                    "target" :["viewOne","putin"]
+                }
+            ],
+            "targets": {
+                "viewOne" :{
+                    "viewName": "View1",
+                    "viewId": "idView1",
+                    "controlAggregation": "masterPages"
+                 },
+                "viewTwo" : {
+                    "viewName": "View2",
+                    "viewId": "idView2",
+                    "controlAggregation": "detailPages"
+                },
+                "EmptyView" : {
+                    "viewName": "Empty",
+                    "viewId": "idEmpty",
+                    "controlAggregation": "detailPages"
+                },
+                "putin" : {
+                    "viewName": "Add",
+                    "viewId": "idAdd",
+                    "controlAggregation": "detailPages"
+                }
+
+            }
+
+
+        },
+
+        "models": {
+            "":{
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "models/mockdata/fruits.json",
+                "settings": {}
+            },
+            "i18n":{
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleUrl": "i18n/i18n.properties"
+                }
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        }
+    }
+}
