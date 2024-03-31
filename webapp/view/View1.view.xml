@@ -1,6 +1,6 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.cap.auto.controller.View1">
    <mvc:content>
-    <Page title="View one">
+    <Page title="View oneee">
         <headerContent>
         <Button tooltip="Go to the next screen" icon="sap-icon://arrow-right" press="onNext"></Button>
         </headerContent>
